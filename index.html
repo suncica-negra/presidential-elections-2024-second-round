@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+        <title>Predsjednički izbori 2024. - drugi krug</title>
+
+        <script src="./static/iframeResizer.contentWindow.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&family=Roboto+Slab:wght@500;900&display=swap" rel="stylesheet">
+        <link rel="preload" href="./static/fonts/TazWt09-Black.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="./static/fonts/TazWt09-Black.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="./static/fonts/TazWt05-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="./static/fonts/TazWt05-Regular.woff" as="font" type="font/woff" crossorigin>
+
+        <!--
+            Original 'style.css'
+            first passed through the prefixer: https://autoprefixer.github.io/
+            and after that through the minifier: https://www.minifier.org/
+        -->
+        <link rel="stylesheet" href="./static/style.min.css?bust=20250108">
+    </head>
+    <body class="cro_elections">
+        <div class="info_wrapper scrollable_wrapper">
+            <div class="general_info">
+                <h1>
+                    <span class="year">2024.</span>
+                    <span class="text">
+                        PREDSJEDNIČKI IZBORI
+                    </span>
+                </h1>
+            </div>
+            <div class="elections_results_wrapper">
+                <div class="details">
+                    <div id="election_results"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data_wrapp">
+            <div class="live_blob">
+                <div class="live">
+                    <p>Rezultati uživo</p>
+                    <div class="blob"></div>
+                </div>
+                <p id="last_change">Stanje u</p>
+                <p id="processed_votes"><span>%</span> obrađenih BM</p>
+            </div>
+            <p class="pixell">Foto: Pixsell</p>
+        </div>
+
+        <template id="person_data_template">
+            <div class="person_data">
+                <div class="graph mobile"><span></span></div>
+                <div class="results">
+                    <img src="" alt="ime prezime" width="135" height="135">
+                    <div>
+                        <div>
+                            <p class="name">Ime Prezime</p>
+                            <p class="votes">Broj glasova: 543.257</p>
+                        </div>
+                        <p class="percent">50.12%</p>
+                        <div class="graph desk"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!--
+            Original 'main.js'
+            passed through the minifier: https://www.digitalocean.com/community/tools/minify
+            with default options included.
+        -->
+        <script src="./static/main.min.js?bust=20250108"></script>
+    </body>
+</html>
