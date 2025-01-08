@@ -160,7 +160,7 @@ h1 {
     font: var(--fontTitleDefault);
     font-size: var(--titleFontSizeDefault);
     font-weight: var(--titleFontWeightDefault);
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 }
 
 .year,
@@ -191,7 +191,8 @@ h1 {
 }
 
 .details {
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
     width: 100%;
 }
 
@@ -305,6 +306,7 @@ h1 {
         text-align: center;
         line-height: 63px;
         font-size: 30px;
+        margin-bottom: 16px;
     }
 
     .year,
