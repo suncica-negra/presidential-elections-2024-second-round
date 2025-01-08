@@ -160,7 +160,7 @@ h1 {
     font: var(--fontTitleDefault);
     font-size: var(--titleFontSizeDefault);
     font-weight: var(--titleFontWeightDefault);
-    margin-bottom: 27px;
+    margin-bottom: 25px;
 }
 
 .year,
@@ -278,7 +278,7 @@ h1 {
     .mobile {
         display: none;
     }
-    
+
     .desk {
         display: block;
     }
@@ -325,10 +325,6 @@ h1 {
         min-height: 165px;
     }
 
-    .votes {
-        margin-top: 1px;
-    }
-
     .person_data {
         flex-direction: row-reverse;
     }
@@ -351,10 +347,15 @@ h1 {
 
     .votes {
         font-size: 18px;
+        margin-top: 1px;
     }
 
     .percent {
         font-size: 42px;
         margin-top: 25px;
+    }
+
+    .details {
+        overflow: hidden;
     }
 }
