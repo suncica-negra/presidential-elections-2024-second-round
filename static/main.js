@@ -93,9 +93,9 @@ function placeDataInHtml(electionResults) {
 }
 
 function setCss() {
-    const queryParam = ((new URLSearchParams(window.location.search)).get('portal'))?.toLowerCase();
+    const queryParamPortal = ((new URLSearchParams(window.location.search)).get('portal'))?.toLowerCase();
 
-    if (queryParam === '24sata') {
+    if (queryParamPortal === '24sata') {
         document.documentElement.style.setProperty('--fontDefault', 'var(--font24sata)');
         document.documentElement.style.setProperty('--fontTitleDefault', 'var(--fontTitle24sata)');
         document.documentElement.style.setProperty('--titleFontWeightDefault', 'var(--titleFontWeight24sata)');
@@ -103,7 +103,7 @@ function setCss() {
         document.documentElement.style.setProperty('--titleFontSizeDefault', 'var(--titleFontSize24sata)');
         document.documentElement.style.setProperty('--fontPercentDefault', 'var(--fontPercent24sata)');
         document.documentElement.style.setProperty('--percentFontWeightDefault', 'var(--percentFontWeight24sata)');
-    } else if (queryParam === 'vl') {
+    } else if (queryParamPortal === 'vl') {
         document.documentElement.style.setProperty('--fontDefault', 'var(--fontVL)');
         document.documentElement.style.setProperty('--fontTitleDefault', 'var(--fontTitleVL)');
         document.documentElement.style.setProperty('--titleFontWeightDefault', 'var(--titleFontWeightVL)');
@@ -111,7 +111,14 @@ function setCss() {
         document.documentElement.style.setProperty('--titleFontSizeDefault', 'var(--titleFontSizeVL)');
         document.documentElement.style.setProperty('--fontPercentDefault', 'var(--fontPercentVL)');
         document.documentElement.style.setProperty('--percentFontWeightDefault', 'var(--percentFontWeightVL)');
-    } else console.error(`[Elections Widget] The font and color are not adjusted because the portal '${queryParam}' is not recognized`);
+
+        const queryParamTheme = ((new URLSearchParams(window.location.search)).get('theme'));
+        if (queryParamTheme === 'dark') {
+            document.documentElement.style.setProperty('--backgroundDefault', 'var(--backgroundDarkVL)');
+            document.documentElement.style.setProperty('--black', 'var(--fontColorDarkVL)');
+            document.documentElement.style.setProperty('--red', 'var(--liveColorDarkVL)');
+        }
+    } else console.error(`[Elections Widget] The font and color are not adjusted because the portal '${queryParamPortal}' is not recognized`);
 }
 
 function setLiveOrNot(live) {
