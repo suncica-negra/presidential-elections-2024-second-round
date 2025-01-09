@@ -319,8 +319,9 @@ h1 {
 
     .results {
         display: grid;
-        grid-template-columns: 165px 260px;
-        gap: 25px;
+        grid-template-columns: 165px auto;
+        grid-gap: 25px;
+        justify-content: unset;
     }
 
     .results img {
@@ -329,12 +330,13 @@ h1 {
     }
 
     .person_data {
-        flex-direction: row-reverse;
+        display: grid;
     }
 
     #election_results {
-        justify-content: space-around;
-        gap: 40px;
+        display: grid;
+        grid-template-columns: calc(50% - 20px) calc(50% - 20px);
+        grid-gap: 40px;
     }
 
     .name,
