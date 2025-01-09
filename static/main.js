@@ -49,18 +49,14 @@ function placeDataInHtml(electionResults) {
         const graphSpanColor = candidate.color || getRandomColor();
         let graph = templateClone.querySelector('.graph.mobile');
         let graphSpan = templateClone.querySelector('.graph.mobile span');
-        let maxNum = 234;
-        let percentInPixel = (Number((percent ? percent : '0').replace(/,/g, '.')) / 100) * maxNum;
 
         if (window.innerWidth < 900) {
-            if (graphSpan) graphSpan.style.height = `${percentInPixel}px`;
+            if (graphSpan) graphSpan.style.height = `${percent.replace(',', '.')}%`;
         } else {
             graph = templateClone.querySelector('.graph.desk');
             graphSpan = templateClone.querySelector('.graph.desk span');
-            maxNum = 260;
-            percentInPixel = (Number((percent ? percent : '0').replace(/,/g, '.')) / 100) * maxNum;
 
-            if (graphSpan) graphSpan.style.width = `${percentInPixel}px`;
+            if (graphSpan) graphSpan.style.width = `${percent.replace(',', '.')}%`;
         }
 
         const graphColor = hexToRgba(graphSpanColor);
@@ -151,7 +147,6 @@ async function getElectionsData(refresh = false) {
         }
     })
     .then((responseJson) => {
-        responseJson.live = true;//briši
         setLiveOrNot(responseJson.live);
         setProcessedVotesAndLastChange(responseJson.vrijeme, responseJson.bmObradjenoPosto);
         placeDataInHtml(responseJson);
