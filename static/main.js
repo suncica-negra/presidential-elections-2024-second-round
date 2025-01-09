@@ -40,7 +40,7 @@ function placeDataInHtml(electionResults) {
 
     const fragment = new DocumentFragment();
 
-    electionResults.lista.slice(0, 2).forEach(candidate => {// briši slice .slice(0, 2)
+    electionResults.lista.slice(0, 2).forEach(candidate => {
         const templateClone = template.content.cloneNode(true);
         const percentWrapper = templateClone.querySelector('.percent');
         const percent = candidate.posto;
@@ -147,6 +147,7 @@ async function getElectionsData(refresh = false) {
         }
     })
     .then((responseJson) => {
+        responseJson.live = true;
         setLiveOrNot(responseJson.live);
         setProcessedVotesAndLastChange(responseJson.vrijeme, responseJson.bmObradjenoPosto);
         placeDataInHtml(responseJson);
